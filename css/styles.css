@@ -93,6 +93,24 @@ body {
     transform: scale(1.2);
 }
 
+.view-project {
+    margin-top: 12px;
+    padding: 4px 8px;
+    border: 2px solid var(--accent-amber);
+    color: var(--accent-amber);
+    font-family: monospace;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    pointer-events: none; /* Let the whole card handle the click */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.project:hover .view-project {
+    background-color: var(--accent-amber);
+    color: var(--bg-dark);
+}
+
 .projects {
     display: flex;
     gap: 16px;

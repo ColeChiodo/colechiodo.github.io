@@ -1,0 +1,12 @@
+@keyframes shake-impact {
+    0% { transform: translate(0, 0); }
+    20% { transform: translate(var(--shake-x, -5px), var(--shake-y, -5px)); }
+    40% { transform: translate(calc(var(--shake-x, -5px) * -1), calc(var(--shake-y, -5px) * -1)); }
+    60% { transform: translate(var(--shake-x, -5px), var(--shake-y, -5px)); }
+    80% { transform: translate(calc(var(--shake-x, -5px) * -1), calc(var(--shake-y, -5px) * -1)); }
+    100% { transform: translate(0, 0); }
+}
+
+.shake-impact {
+    animation: shake-impact 0.4s;
+}

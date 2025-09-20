@@ -1,0 +1,24 @@
+.particle {
+  position: fixed;
+  font-family: monospace;
+  font-size: 14px;
+  color: var(--fg-muted);
+  pointer-events: none;
+  user-select: none;
+  z-index: 9999;
+}
+
+#matrix-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  color: rgba(0, 255, 0, 0.08);
+  font-family: monospace;
+  font-size: 12px;
+  white-space: pre;
+  z-index: 1000;
+  overflow: hidden;
+}

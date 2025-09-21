@@ -1,4 +1,10 @@
 document.addEventListener("click", (e) => {
+    const noShakeEl = document.getElementById("pixelBoard");
+
+    if (noShakeEl && noShakeEl.contains(e.target)) {
+        return;
+    }
+
     const body = document.body;
 
     const centerX = window.innerWidth / 2;

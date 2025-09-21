@@ -1,5 +1,5 @@
 const gridSize = 16;
-let selectedColor = "#FF0000";
+let selectedColor = "#fb4934";
 const grid = [];
 
 // Init grid

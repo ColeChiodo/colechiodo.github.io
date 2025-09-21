@@ -64,7 +64,6 @@ footer {
     background-color: var(--bg-dark);
     color: var(--fg-default);
     border: 2px solid var(--accent-amber);
-    border-radius: 4px;
     padding: 6px 10px;
     font-family: "Inter", monospace, system-ui;
     font-size: 14px;
@@ -84,10 +83,9 @@ footer {
 }
 
 #submitBtn {
-    background-color: var(--accent-amber);
-    color: var(--bg-dark);
+    background-color: var(--bg-dark);
+    color: var(--accent-amber);
     border: 2px solid var(--accent-amber);
-    border-radius: 4px;
     padding: 6px 12px;
     font-family: "Inter", monospace, system-ui;
     font-size: 14px;
@@ -96,8 +94,8 @@ footer {
 }
 
 #submitBtn:hover {
-    background-color: var(--bg-dark);
-    color: var(--accent-amber);
+    background-color: var(--accent-amber);
+    color: var(--bg-dark);
     transform: scale(1.05);
 }
 

@@ -1,14 +1,17 @@
 function spawnParticles(x, y) {
     const numParticles = 20;
 
+    const scrollX = window.scrollX;
+    const scrollY = window.scrollY;
+
     for (let i = 0; i < numParticles; i++) {
         const span = document.createElement("span");
         span.textContent = getRandomChar();
         span.classList.add("particle");
         span.style.color = particleColors[Math.floor(Math.random() * particleColors.length)];
 
-        span.style.left = `${x}px`;
-        span.style.top = `${y}px`;
+        span.style.left = `${x + scrollX}px`;
+        span.style.top = `${y + scrollY}px`;
 
         document.body.appendChild(span);
 
@@ -38,6 +41,9 @@ function spawnAsciiBreakParticles(canvas) {
     const rect = canvas.getBoundingClientRect();
     const numParticles = Math.min(text.length, 100);
 
+    const scrollX = window.scrollX;
+    const scrollY = window.scrollY;
+
     for (let i = 0; i < numParticles; i++) {
         const span = document.createElement("span");
 
@@ -47,8 +53,8 @@ function spawnAsciiBreakParticles(canvas) {
         span.classList.add("particle");
         span.style.color = particleColors[Math.floor(Math.random() * particleColors.length)];
 
-        const x = rect.left + Math.random() * rect.width;
-        const y = rect.top + Math.random() * rect.height;
+        const x = rect.left + Math.random() * rect.width + scrollX;
+        const y = rect.top + Math.random() * rect.height + scrollY;
         span.style.left = `${x}px`;
         span.style.top = `${y}px`;
 

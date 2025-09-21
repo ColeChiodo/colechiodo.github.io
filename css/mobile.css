@@ -112,3 +112,27 @@
         opacity: 1;
     }
 }
+
+@media (max-width: 600px) {
+    .pixel-board__form {
+        flex-direction: column; /* stack vertically */
+        align-items: stretch;   /* inputs fill width */
+    }
+
+    #authorInput,
+    #descInput,
+    #submitBtn {
+        width: 100%;            /* full width on mobile */
+        box-sizing: border-box; /* include padding in width */
+    }
+
+    #submitBtn {
+        margin-top: 8px;        /* spacing between inputs and button */
+    }
+}
+
+@media (max-width: 600px) {
+    .pixel-board__timeline {
+        grid-template-columns: 1fr; /* stack entries vertically */
+    }
+}

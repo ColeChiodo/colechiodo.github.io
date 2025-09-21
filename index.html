@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="css/tv-static.css">
     <link rel="stylesheet" href="css/shake.css">
     <link rel="stylesheet" href="css/scanline.css">
+
+    <link rel="stylesheet" href="css/pixel-canvas.css">
 </head>
 <body>
 
@@ -188,6 +190,33 @@
         </div>
     </section>
 
+    <pre style="color: var(--fg-muted);">
+───────────────────────────────
+</pre>
+
+    <h2>Draw a Message</h2>
+    <a class="page-button" href="gallery.html">View Gallery</a>
+    <div class="pixel-board" id="pixelBoard">
+        <div class="pixel-board__form">
+            <div class="pixel-board__palette">
+                <button class="pixel-color" style="background:var(--black)" data-color="var(--black)"></button>
+                <button class="pixel-color" style="background:var(--red)" data-color="var(--red)"></button>
+                <button class="pixel-color" style="background:var(--green)" data-color="var(--green)"></button>
+                <button class="pixel-color" style="background:var(--yellow)" data-color="var(--yellow)"></button>
+                <button class="pixel-color" style="background:var(--blue)" data-color="var(--blue)"></button>
+                <button class="pixel-color" style="background:var(--purple)" data-color="var(--purple)"></button>
+                <button class="pixel-color" style="background:var(--aqua)" data-color="var(--aqua)"></button>
+                <button class="pixel-color" style="background:var(--white)" data-color="var(--white)"></button>
+            </div>
+
+            <div id="pixelGrid" class="pixel-board__grid"></div>
+            
+            <input type="text" id="authorInput" placeholder="Your name" maxlength="12">
+            <input type="text" id="descInput" placeholder="Short message" maxlength="36">
+            <button id="submitBtn">Post</button>
+        </div>
+    </div>
+
     <footer>
         &gt; 200 portfolio loaded successfully
     </footer>
@@ -204,5 +233,7 @@
     <script src="js/ascii-changer.js"></script>
     <script src="js/shake.js"></script>
     <script src="js/matrix.js"></script>
+
+    <script src="js/pixel-canvas.js"></script>
 </body>
 </html>

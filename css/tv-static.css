@@ -1,6 +1,6 @@
 .tv-static-overlay {
     pointer-events: none;
-    position: absolute;
+    position: fixed;
     inset: 0;
     z-index: 999;
     background: repeating-linear-gradient(

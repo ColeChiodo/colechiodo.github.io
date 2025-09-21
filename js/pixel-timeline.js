@@ -1,7 +1,7 @@
 const gridSize = 16;
 
 async function fetchArt() {
-const res = await fetch("http://localhost:9050/art");
+const res = await fetch("https://colechiodo.cc/art");
 const data = await res.json();
 const timeline = document.getElementById("timeline");
 timeline.innerHTML = "";

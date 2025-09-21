@@ -47,6 +47,10 @@ app.post("/art", (req, res) => {
   const { author, description, timePosted, grid } = req.body;
   const gridJSON = JSON.stringify(grid);
 
+  if (author.toLowerCase() === "cole chiodo") {
+    return res.status(400).json({ error: "Invalid name" });
+  }
+
   db.run(
     "INSERT INTO art (author, description, timePosted, grid) VALUES (?, ?, ?, ?)",
     [author, description, timePosted, gridJSON],

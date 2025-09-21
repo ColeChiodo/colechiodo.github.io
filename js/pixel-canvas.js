@@ -33,6 +33,16 @@ document.getElementById("submitBtn").addEventListener("click", async () => {
     const author = document.getElementById("authorInput").value;
     const description = document.getElementById("descInput").value;
 
+    if (!author || !description) {
+        alert("Please enter an author and/or description.");
+        return;
+    }
+
+    if (author.toLowerCase() === "cole chiodo") {
+        alert("Invalid name.");
+        return;
+    }
+
     const payload = {
         author,
         description,

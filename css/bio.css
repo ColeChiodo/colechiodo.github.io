@@ -14,20 +14,22 @@
 }
 
 .ascii-profile {
-    width: 150px;
-    height: 150px;
+    width: 175px;
+    height: 175px;
     border: 2px solid var(--accent-amber);
     background-color: var(--bg-dark);
+    text-shadow: 0 0 5px currentColor,
+               0 0 10px currentColor,
+               0 0 20px currentColor;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 12px auto;
     overflow: hidden;
 }
 
 .ascii-profile pre {
     font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    font-size: 10px;
+    font-size: 12px;
     line-height: 1.3em;
     white-space: pre;
 }

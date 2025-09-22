@@ -1,0 +1,21 @@
+body, h1, h2, h3, h4, h5, h6, p, span, a, li {
+    position: relative;
+    text-shadow: 0.5px 0 red, -0.5px 0 cyan, 0 0.5px blue, 0 -0.5px yellow;
+    animation: chroma 3s infinite linear;
+}
+
+
+@keyframes chroma {
+    0% {
+        text-shadow: 0.5px 0 red, -0.5px 0 cyan, 0 0.5px blue, 0 -0.5px yellow;
+    }
+    10% {
+        text-shadow: 0.3px -0.2px red, -0.4px 0.3px cyan, 0.2px 0.4px blue, -0.3px -0.2px yellow;
+    }
+    25% {
+        text-shadow: 0.6px 0.1px red, -0.5px -0.1px cyan, 0.3px 0.6px blue, -0.4px 0.5px yellow;
+    }
+    40% {
+        text-shadow: 0.2px -0.3px red, -0.3px 0.2px cyan, 0.4px 0.3px blue, -0.2px -0.4px yellow;
+    }
+}

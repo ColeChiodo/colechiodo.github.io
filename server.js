@@ -11,9 +11,6 @@ const PORT = 9050;
 app.use(cors());
 app.use(bodyParser.json());
 
-// Serve all files in the root folder (index.html, gallery.html, css/, js/, etc.)
-app.use(express.static(path.join(__dirname)));
-
 // Initialize SQLite database
 const db = new sqlite3.Database("./db.sqlite", (err) => {
   if (err) console.error(err.message);
@@ -63,8 +60,16 @@ app.post("/art", (req, res) => {
 
 // Explicitly serve index.html for root
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "index.html"));
+  const userAgent = req.get("User-Agent") || "";
+  if (userAgent.toLowerCase().includes("curl")) {
+    res.sendFile(path.join(__dirname, "index.txt"));
+  } else {
+    res.sendFile(path.join(__dirname, "index.html"));
+  }
 });
+
+// Serve all files in the root folder (index.html, gallery.html, css/, js/, etc.)
+app.use(express.static(path.join(__dirname)));
 
 // Start server
 app.listen(PORT, () => {

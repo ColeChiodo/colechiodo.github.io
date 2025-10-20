@@ -27,7 +27,7 @@
 .project {
     position: relative;
     width: 150px;
-    height: 250px;
+    height: 300px;
     border: 2px solid var(--accent-amber);
     overflow: hidden;
     transition: width 0.3s, height 0.3s;
@@ -79,7 +79,7 @@
 
 .project:hover {
     width: 400px;
-    height: 250px;
+    height: 300px;
 }
 
 .project:hover img {

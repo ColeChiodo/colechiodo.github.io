@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" href="images/favicon.png">
+	<title>Kuraji -「クラジ」</title>
+
+	<meta property="og:title" content="Kuraji -「クラジ」" />
+	<meta property="og:description" content="Browser extension for Firefox and Chrome that automatically finds Japanese subtitles for the video you are watching." />
+	<meta property="og:image" content="https://github.com/ColeChiodo/subtitle-autoloader/raw/main/public/assets/readme/icon.png" />
+	<meta property="og:url" content="https://kuraji.colechiodo.cc" />
+	<meta property="og:type" content="website" />
+
+	<!-- Styles -->
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/extension.css">
+	<link rel="stylesheet" href="css/mobile.css">
+
+	<!-- Effects (optional) -->
+	<link rel="stylesheet" href="css/particles.css">
+	<link rel="stylesheet" href="css/tv-static.css">
+	<link rel="stylesheet" href="css/shake.css">
+	<link rel="stylesheet" href="css/scanline.css">
+	<link rel="stylesheet" href="css/chromatic-aberration.css">
+	<link rel="stylesheet" href="css/vignette.css">
+	<link rel="stylesheet" href="css/kuraji.css">
+</head>
+<body>
+	<header class="main-header">
+		<div class="header-content">
+			<img src="images/kuraji/icon.png" alt="Extension Logo" class="extension-logo">
+			<div class="header-text">
+				<h1>Kuraji -「クラジ」</h1>
+				<p class="description">
+					Open-Source browser extension for Firefox and Chrome that automatically finds Japanese subtitles for the video you are watching.
+				</p>
+				<div class="header-buttons">
+					<a id="extension-link" href="#" class="download-button">
+						<img class="button-icon" id="browser-icon" src="" alt="Browser Icon">
+						<span id="button-text">Download</span>
+					</a>
+					<a href="https://github.com/colechiodo/subtitle-autoloader" target="_blank" class="github-button">
+						<img class="button-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/github.svg" alt="GitHub Icon">
+						GitHub
+					</a>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<section class="screenshots">
+		<div class="screenshot-gallery">
+			<img src="images/kurajitest.gif" alt="example 0" class="screenshot-img">
+			<img src="images/kuraji/example1.png" alt="example 1" class="screenshot-img">
+			<img src="images/kuraji/example2.png" alt="example 2" class="screenshot-img">
+			<img src="images/kuraji/example3.png" alt="example 3" class="screenshot-img">
+		</div>
+	</section>
+
+	<!-- Fullscreen Modal -->
+	<div id="modal" class="modal">
+		<span class="modal-close">&times;</span>
+		<img class="modal-content" id="modal-img">
+	</div>
+
+	<footer>
+		© 2025 <a href="https://colechiodo.cc">colechiodo.cc</a>
+	</footer>
+
+	<!-- Overlay Effects -->
+	<div class="tv-static-overlay"></div>
+	<div class="scan-line"></div>
+	<div id="matrix-overlay"></div>
+	<div class="vignette"></div>
+
+	<!-- Scripts -->
+	<script src="js/utils.js"></script>
+	<script src="js/audio.js"></script>
+	<script src="js/particles.js"></script>
+	<script src="js/scanline.js"></script>
+	<script src="js/shake.js"></script>
+	<script src="js/matrix.js"></script>
+	<script src="js/pixel-timeline.js"></script>
+
+	<!-- Browser Detection Script -->
+	<script>
+		const chromeLink = "https://chromewebstore.google.com/detail/gbeolmhljhgoidkalfbkagobfhpgkfbf?utm_source=item-share-cb";
+		const firefoxLink = "https://addons.mozilla.org/en-US/firefox/addon/kuraji/";
+
+		const userAgent = navigator.userAgent.toLowerCase();
+		const extensionLink = document.getElementById('extension-link');
+		const buttonText = document.getElementById('button-text');
+		const browserIcon = document.getElementById('browser-icon');
+
+		if (userAgent.includes('firefox')) {
+			extensionLink.href = firefoxLink;
+			buttonText.textContent = "Download for Firefox";
+			browserIcon.src = "https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/firefox.svg";
+		} else if (userAgent.includes('chrome') || userAgent.includes('chromium')) {
+			extensionLink.href = chromeLink;
+			buttonText.textContent = "Download for Chrome";
+			browserIcon.src = "https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/googlechrome.svg";
+		} else {
+			extensionLink.href = "#";
+			buttonText.textContent = "Download (Browser not detected)";
+			browserIcon.src = "";
+		}
+	</script>
+	<script>
+		// Modal Elements
+		const modal = document.getElementById('modal');
+		const modalImg = document.getElementById('modal-img');
+		const modalClose = document.getElementsByClassName('modal-close')[0];
+
+		// Attach click event to all screenshot images
+		document.querySelectorAll('.screenshot-img').forEach(img => {
+			img.addEventListener('click', () => {
+				modal.style.display = 'block';
+				modalImg.src = img.src;
+			});
+		});
+
+		// Close the modal when clicking the close button
+		modalClose.onclick = () => {
+			modal.style.display = 'none';
+		};
+
+		// Close the modal when clicking outside the image
+		modal.onclick = (e) => {
+			if (e.target === modal) {
+				modal.style.display = 'none';
+			}
+		};
+	</script>
+</body>
+</html>

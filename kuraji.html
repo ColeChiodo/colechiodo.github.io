@@ -95,10 +95,12 @@
 
 		if (userAgent.includes('firefox')) {
 			extensionLink.href = firefoxLink;
+			extensionLink.target = "_blank";
 			buttonText.textContent = "Download for Firefox";
 			browserIcon.src = "https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/firefox.svg";
 		} else if (userAgent.includes('chrome') || userAgent.includes('chromium')) {
 			extensionLink.href = chromeLink;
+			extensionLink.target = "_blank";
 			buttonText.textContent = "Download for Chrome";
 			browserIcon.src = "https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/googlechrome.svg";
 		} else {

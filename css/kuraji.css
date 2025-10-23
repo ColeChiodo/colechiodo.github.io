@@ -19,19 +19,19 @@
 }
 
 :root {
-    --color-primary: #6C63FF;
-    --color-secondary: #FF6584;
-    --color-accent: #FFD166;
-    --color-text-light: #F5F5F5;
-    --color-text-dark: #1B1B1B;
-    --color-background-dark: #121212;
-    --color-background-medium: #1E1E1E;
-    --color-background-light: #2A2A2A;
-    --color-border-dark: #333333;
-    
+    --color-primary: #d79921;      /* Amber (Gruvbox yellow/amber) */
+    --color-secondary: #fe8019;    /* Orange (Gruvbox orange) */
+    --color-accent: #b8bb26;       /* Green (Gruvbox green) */
+    --color-text-light: #ebdbb2;   /* Light text */
+    --color-text-dark: #282828;    /* Dark text */
+    --color-background-dark: #1d2021; /* Gruvbox dark background */
+    --color-background-medium: #282828; /* Gruvbox dark0 */
+    --color-background-light: #3c3836;  /* Gruvbox dark2 */
+    --color-border-dark: #333333;  /* unchanged gray */
+
     --font-heading: 'Exo2', sans-serif;
-    --font-body: 'Exo2', sans-serif; /* optional, or use Inter if desired */
-    
+    --font-body: 'Exo2', sans-serif;
+
     --transition-speed: 0.5s ease-out;
 }
 

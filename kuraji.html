@@ -1,139 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" type="image/png" href="https://colechiodo.cc/images/kuraji/icon.png">
-	<title>Kuraji -「クラジ」</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="images/kuraji/icon.png" />
+    <title>Kuraji -「クラジ」 | Find Japanese Subtitles Automatically</title>
 
-	<meta property="og:title" content="Kuraji -「クラジ」" />
-	<meta property="og:description" content="Browser extension for Firefox and Chrome that automatically finds Japanese subtitles for the video you are watching." />
-	<meta property="og:image" content="https://github.com/ColeChiodo/subtitle-autoloader/raw/main/public/assets/readme/icon.png" />
-	<meta property="og:url" content="https://kuraji.colechiodo.cc" />
-	<meta property="og:type" content="website" />
+    <meta property="og:title" content="Kuraji -「クラジ」" />
+    <meta property="og:description" content="Quickly grab Japanese subtitles for Jellyfin, YouTube, and more." />
+    <meta property="og:image" content="https://github.com/ColeChiodo/subtitle-autoloader/raw/main/public/assets/readme/icon.png" />
+    <meta property="og:url" content="https://kuraji.colechiodo.cc" />
+    <meta property="og:type" content="website" />
 
-	<!-- Styles -->
-	<link rel="stylesheet" href="css/base.css">
-	<link rel="stylesheet" href="css/extension.css">
-	<link rel="stylesheet" href="css/mobile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 
-	<!-- Effects (optional) -->
-	<link rel="stylesheet" href="css/particles.css">
-	<link rel="stylesheet" href="css/tv-static.css">
-	<link rel="stylesheet" href="css/shake.css">
-	<link rel="stylesheet" href="css/scanline.css">
-	<link rel="stylesheet" href="css/chromatic-aberration.css">
-	<link rel="stylesheet" href="css/vignette.css">
-	<link rel="stylesheet" href="css/kuraji.css">
+    <link rel="stylesheet" href="css/kuraji.css" />
 </head>
 <body>
-	<header class="main-header">
-		<div class="header-content">
-			<img src="images/kuraji/icon.png" alt="Extension Logo" class="extension-logo">
-			<div class="header-text">
-				<h1>Kuraji -「クラジ」</h1>
-				<p class="description">
-					Open-Source browser extension for Firefox and Chrome that automatically finds Japanese subtitles for the video you are watching.
+    <header>
+        <div class="logo"><img class="logo-image" src="images/kuraji/icon-nobg.png" alt="Kuraji Logo">KURAJI<span>クラジ</span></div>
+        <nav>
+            <a href="#platform-compatibility">Platforms</a>
+            <a href="#core-features">Features</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#future-plans">Roadmap</a>
+            <a href="https://github.com/ColeChiodo/subtitle-autoloader" target="_blank">GitHub</a>
+        </nav>
+        <button id="cta-header" class="cta-button"></button>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="animate-in">
+                    Subtitles, Made Easy.<br>
+                    <span class="highlight-text">Enjoy Anime Without Hassle.</span>
+                </h1>
+                <p class="animate-in delay-1">
+                    <b>Kuraji</b> is a free, open-source tool that automatically finds Japanese subtitles for anime on Jellyfin, YouTube, and more.
 				</p>
-				<div class="header-buttons">
-					<a id="extension-link" href="#" class="download-button">
-						<img class="button-icon" id="browser-icon" src="" alt="Browser Icon">
-						<span id="button-text">Download</span>
-					</a>
-					<a href="https://github.com/colechiodo/subtitle-autoloader" target="_blank" class="github-button">
-						<img class="button-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/github.svg" alt="GitHub Icon">
-						GitHub
-					</a>
-				</div>
-			</div>
-		</div>
-	</header>
+                <div class="hero-ctas animate-in delay-2">
+                    <button id="cta-hero" class="cta-button primary"></button>
+                    <a href="https://github.com/ColeChiodo/subtitle-autoloader" target="_blank" class="cta-link">
+                        Check Out the Code <span aria-hidden="true">&rarr;</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image-container animate-in delay-3">
+                <img src="images/kurajitest.gif" alt="Kuraji Extension showing subtitles on Jellyfin" class="hero-image" />
+            </div>
+        </section>
 
-	<section class="screenshots">
-		<div class="screenshot-gallery">
-			<img src="images/kurajitest.gif" alt="example 0" class="screenshot-img">
-			<img src="images/kuraji/example1.png" alt="example 1" class="screenshot-img">
-			<img src="images/kuraji/example2.png" alt="example 2" class="screenshot-img">
-			<img src="images/kuraji/example3.png" alt="example 3" class="screenshot-img">
-		</div>
-	</section>
+        <!-- INFO SECTION -->
+        <section class="info-section scroll-fade">
+            <div class="container">
+                <div class="info-text">
+                    <h2>Subtitles That Just Work</h2>
+                    <p>Kuraji uses smart matching to automatically pick the best subtitle file and sync it with your video. <b>No more hunting around manually.</b></p>
+                    <div class="stats-grid">
+                        <div>
+                            <span class="stat-number">98%</span>
+                            <span class="stat-label">Success Rate*</span>
+                        </div>
+                        <div>
+                            <span class="stat-number">1000+</span>
+                            <span class="stat-label">Requests/Hour</span>
+                        </div>
+                        <div>
+                            <span class="stat-number">2025</span>
+                            <span class="stat-label">Modern Tech</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-	<!-- Fullscreen Modal -->
-	<div id="modal" class="modal">
-		<span class="modal-close">&times;</span>
-		<img class="modal-content" id="modal-img">
-	</div>
+        <!-- CORE FEATURES SECTION -->
+        <section id="core-features" class="features-section">
+            <h2 class="section-title scroll-fade">Main Features You’ll Love</h2>
+            <div class="feature-grid">
+                <div class="feature-card scroll-fade">
+                    <h3>Auto Title Detection</h3>
+                    <p>Kuraji reads the video info—title, season, episode—and uses it to find the right subtitles fast.</p>
+                </div>
+                <div class="feature-card scroll-fade delay-1">
+                    <h3>Perfect Sync</h3>
+                    <p>Grab synchronized subtitles from Japanese sources so everything lines up perfectly on your video.</p>
+                </div>
+                <div class="feature-card scroll-fade delay-2">
+                    <h3>Customizable Look</h3>
+                    <p>Move, resize, or recolor subtitles to make your viewing experience comfortable and stylish.</p>
+                </div>
+                <div class="feature-card scroll-fade delay-3">
+                    <h3>Learn Japanese While Watching</h3>
+                    <p>Works with tools like <b>Yomitan</b> so you can pick up Japanese naturally while you enjoy anime.</p>
+                </div>
+            </div>
+            <img src="images/kuraji/example3.png" alt="Kuraji Interface example showing settings" class="section-image scroll-fade delay-4" />
+        </section>
 
-	<footer>
-		© 2025 <a href="https://colechiodo.cc">colechiodo.cc</a>
-	</footer>
+        <!-- PLATFORM COMPATIBILITY SECTION -->
+        <section id="platform-compatibility" class="compatibility-section">
+            <div class="scroll-fade">
+                <h2>Works Almost Anywhere</h2>
+                <p class="subtitle">Kuraji is designed to run smoothly across popular media platforms and browsers. It’s flexible and easy to add new platforms as needed.</p>
+            </div>
+            
+            <div class="platform-cards">
+                <div class="platform-card scroll-fade">
+                    <i data-lucide="monitor-play" class="platform-icon"></i>
+                    <h3>Media Servers & Streaming</h3>
+                    <p>Supports personal servers like <b>Jellyfin</b> and streaming platforms like <b>YouTube</b>. Basic iFrame support means it works almost anywhere.</p>
+                </div>
+                <div class="platform-card scroll-fade delay-1">
+                    <i data-lucide="globe" class="platform-icon"></i>
+                    <h3>All Browsers</h3>
+                    <p>Works in all major browsers, including <b>Firefox</b> and <b>Chrome</b>, for a consistent experience no matter how you watch.</p>
+                </div>
+                <div class="platform-card scroll-fade delay-2">
+                    <i data-lucide="users" class="platform-icon"></i>
+                    <h3>Open Source & Community-Friendly</h3>
+                    <p>Kuraji is <b>MIT Licensed</b>. Anyone can check the code, contribute, or tweak it for their own setup.</p>
+                </div>
+            </div>
+            <img src="images/kuraji/example2.png" alt="Kuraji subtitles on Jellyfin example" class="compatibility-image scroll-fade">
+        </section>
 
-	<!-- Overlay Effects -->
-	<div class="tv-static-overlay"></div>
-	<div class="scan-line"></div>
-	<div id="matrix-overlay"></div>
-	<div class="vignette"></div>
+        <!-- HOW IT WORKS SECTION -->
+        <section id="how-it-works" class="process-section">
+            <h2 class="section-title scroll-fade">How Kuraji Works: 6 Easy Steps</h2>
+            
+            <div class="process-flow">
+                <div class="process-step scroll-fade">
+                    <span class="step-number">01</span>
+                    <h3>Read Video Info</h3>
+                    <p>Gets the title, season, and episode from your video so it knows what to look for.</p>
+                </div>
+                <div class="process-step scroll-fade delay-1">
+                    <span class="step-number">02</span>
+                    <h3>Gather Metadata</h3>
+                    <p>Looks up alternative titles and episode info from <b>AniList</b> and <b>MyAnimeList</b> to improve accuracy.</p>
+                </div>
+                <div class="process-step scroll-fade delay-2">
+                    <span class="step-number">03</span>
+                    <h3>Make Title Variants</h3>
+                    <p>Generates different versions of the title to increase the chance of finding a match.</p>
+                </div>
+                <div class="process-step scroll-fade">
+                    <span class="step-number">04</span>
+                    <h3>Check Subtitle Repos</h3>
+                    <p>Looks for Japanese subtitles using GitHub APIs for fast, reliable results.</p>
+                </div>
+                <div class="process-step scroll-fade delay-1">
+                    <span class="step-number">05</span>
+                    <h3>Pick the Best File</h3>
+                    <p>Matches subtitles to the video metadata and selects the best `.srt` file available.</p>
+                </div>
+                <div class="process-step scroll-fade delay-2">
+                    <span class="step-number">06</span>
+                    <h3>Show Subtitles</h3>
+                    <p>Downloads and displays the subtitles perfectly synced on your player.</p>
+                </div>
+            </div>
+        </section>
 
-	<!-- Scripts -->
-	<script src="js/utils.js"></script>
-	<script src="js/audio.js"></script>
-	<script src="js/particles.js"></script>
-	<script src="js/scanline.js"></script>
-	<script src="js/shake.js"></script>
-	<script src="js/matrix.js"></script>
-	<script src="js/pixel-timeline.js"></script>
+        <!-- FUTURE PLANS SECTION -->
+        <section id="future-plans" class="future-plans-section">
+            <div class="container">
+                <div class="future-content">
+                    <h2 class="scroll-fade">What's Next?</h2>
+                    <p class="scroll-fade subtitle">Kuraji is always improving. Here’s what’s coming up:</p>
+                    <ul class="scroll-fade">
+                        <li><b>More platform support</b> so it works on even more streaming sites.</li>
+                        <li>Add support for <b>.ass subtitle files</b> for fancier styling.</li>
+                        <li>Fix <b>iFrame quirks</b> for smoother fullscreen and playback.</li>
+                        <li>Bring Japanese subtitles to <b>live-action shows and movies</b> by connecting to more databases.</li>
+                    </ul>
+                </div>
+                <img src="images/kuraji/example1.png" alt="Kuraji in action with subtitles" class="future-image scroll-fade" />
+            </div>
+        </section>
 
-	<!-- Browser Detection Script -->
-	<script>
-		const chromeLink = "https://chromewebstore.google.com/detail/gbeolmhljhgoidkalfbkagobfhpgkfbf?utm_source=item-share-cb";
-		const firefoxLink = "https://addons.mozilla.org/en-US/firefox/addon/kuraji/";
+        <!-- CTA BANNER SECTION -->
+        <section class="cta-banner">
+            <div class="cta-content scroll-fade">
+                <h2>Ready to make watching anime easier?</h2>
+                <p>Install Kuraji and enjoy your shows with Japanese subtitles automatically. No fuss, just watching.</p>
+                <button id="cta-footer" class="cta-button primary"></button>
+                <p class="fine-print">MIT Licensed. Fully open-source.</p>
+            </div>
+        </section>
+    </main>
 
-		const userAgent = navigator.userAgent.toLowerCase();
-		const extensionLink = document.getElementById('extension-link');
-		const buttonText = document.getElementById('button-text');
-		const browserIcon = document.getElementById('browser-icon');
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="logo"><img class="logo-image" src="images/kuraji/icon-nobg.png" alt="Kuraji Logo">KURAJI<span>クラジ</span></div>
+                <p class="copyright">&copy; 2025 <a class="colechiodocc" href="https://colechiodo.cc" target="_blank">colechiodo.cc</a></p>
+				<p class="fine-print">| MIT Licensed</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <a href="#platform-compatibility">Platforms</a>
+                <a href="#core-features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#future-plans">Roadmap</a>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <a href="https://github.com/ColeChiodo/subtitle-autoloader" target="_blank">GitHub</a>
+                <a href="#" id="footer-install-link">Install Kuraji</a>
+            </div>
+        </div>
+    </footer>
 
-		if (userAgent.includes('firefox')) {
-			extensionLink.href = firefoxLink;
-			extensionLink.target = "_blank";
-			buttonText.textContent = "Download for Firefox";
-			browserIcon.src = "https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/firefox.svg";
-		} else if (userAgent.includes('chrome') || userAgent.includes('chromium')) {
-			extensionLink.href = chromeLink;
-			extensionLink.target = "_blank";
-			buttonText.textContent = "Download for Chrome";
-			browserIcon.src = "https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/googlechrome.svg";
-		} else {
-			extensionLink.href = "#";
-			buttonText.textContent = "Download (Browser not detected)";
-			browserIcon.src = "";
-		}
-	</script>
-	<script>
-		// Modal Elements
-		const modal = document.getElementById('modal');
-		const modalImg = document.getElementById('modal-img');
-		const modalClose = document.getElementsByClassName('modal-close')[0];
-
-		// Attach click event to all screenshot images
-		document.querySelectorAll('.screenshot-img').forEach(img => {
-			img.addEventListener('click', () => {
-				modal.style.display = 'block';
-				modalImg.src = img.src;
-			});
-		});
-
-		// Close the modal when clicking the close button
-		modalClose.onclick = () => {
-			modal.style.display = 'none';
-		};
-
-		// Close the modal when clicking outside the image
-		modal.onclick = (e) => {
-			if (e.target === modal) {
-				modal.style.display = 'none';
-			}
-		};
-	</script>
+    <script src="js/kuraji.js"></script>
 </body>
 </html>

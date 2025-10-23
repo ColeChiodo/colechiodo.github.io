@@ -97,19 +97,12 @@ document.addEventListener('DOMContentLoaded', () => {
         // Replace the single cta-hero button with two explicit install buttons.
         ctaHero.remove(); // Remove the placeholder button
 
-        // Generate Chrome and Firefox buttons
-        const chromeButtonHtml = generateCtaHtml(chromeTarget, true); // Chrome as primary style
-        const firefoxButtonHtml = generateCtaHtml(firefoxTarget, false);
-        
-        // Inject the two new buttons
-        heroCtasContainer.insertAdjacentHTML('afterbegin', chromeButtonHtml + firefoxButtonHtml);
-
         // Update the cta-link next to it for context
         const ctaLink = heroCtasContainer.querySelector('.cta-link');
         if (ctaLink) {
              ctaLink.href = githubTarget.link;
              // Ensure the HTML uses <b> tags
-             ctaLink.innerHTML = `View Source Code or <b>Manual Install</b> <span aria-hidden="true">&rarr;</span>`;
+             ctaLink.innerHTML = `View Source Code<span aria-hidden="true">&rarr;</span>`;
         }
 
     } else if (ctaHero) {

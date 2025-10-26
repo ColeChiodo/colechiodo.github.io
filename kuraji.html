@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="images/kuraji/icon.png" />
+    <link id="favicon" rel="icon" type="image/png" href="images/kuraji/icon-nobg.png" />
     <title>Kuraji -「クラジ」 | Find Japanese Subtitles Automatically</title>
 
     <meta property="og:title" content="Kuraji -「クラジ」" />
@@ -220,5 +220,18 @@
     </footer>
 
     <script src="js/kuraji.js"></script>
+    <script>
+        function updateFavicon() {
+            const favicon = document.getElementById('favicon');
+            const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            favicon.href = darkMode ? 'images/kuraji/icon-nobg.png' : 'images/kuraji/icon-nobg-black.png';
+        }
+
+        // Set favicon on load
+        updateFavicon();
+
+        // Listen for theme changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateFavicon);
+    </script>
 </body>
 </html>

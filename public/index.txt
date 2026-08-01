@@ -1,0 +1,54 @@
+[1;36m============================================================[0m
+[1;36m⠄⠄⠄⠄⢠⣿⣿⣿⣿⣿⢻⣿⣿⣿⣿⣿⣿⣿⣿⣯⢻⣿⣿⣿⣿⣆⠄⠄⠄ [0m   [1;37mCole Chiodo[0m
+[1;36m⠄⠄⣼⢀⣿⣿⣿⣿⣏⡏⠄⠹⣿⣿⣿⣿⣿⣿⣿⣿⣧⢻⣿⣿⣿⣿⡆⠄⠄ [0m   [1;32mSoftware Engineer[0m
+[1;36m⠄⠄⡟⣼⣿⣿⣿⣿⣿⠄⠄⠄⠈⠻⣿⣿⣿⣿⣿⣿⣿⣇⢻⣿⣿⣿⣿⠄⠄ [0m   Location: [1;34mSF Bay Area[0m
+[1;36m⠄⢰⠃⣿⣿⠿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠙⠿⣿⣿⣿⣿⣿⠄⢿⣿⣿⣿⡄⠄ [0m     > [1;33mbuilding games, apps, websites[0m
+[1;36m⠄⢸⢠⣿⣿⣧⡙⣿⣿⡆⠄⠄⠄⠄⠄⠄⠄⠈⠛⢿⣿⣿⡇⠸⣿⡿⣸⡇⠄ [0m   GitHub:   https://github.com/colechiodo
+[1;36m⠄⠈⡆⣿⣿⣿⣿⣦⡙⠳⠄⠄⠄⠄⠄⠄⢀⣠⣤⣀⣈⠙⠃⠄⠿⢇⣿⡇⠄ [0m   LinkedIn: https://linkedin.com/in/colechiodo
+[1;36m⠄⠄⡇⢿⣿⣿⣿⣿⡇⠄⠄⠄⠄⠄⣠⣶⣿⣿⣿⣿⣿⣿⣷⣆⡀⣼⣿⡇⠄ [0m   Email:    colechiodo@gmail.com
+[1;36m⠄⠄⢹⡘⣿⣿⣿⢿⣷⡀⠄⢀⣴⣾⣟⠉⠉⠉⠉⣽⣿⣿⣿⣿⠇⢹⣿⠃⠄ [0m   Insta:    https://instagram.com/colechiodo
+[1;36m⠄⠄⠄⢷⡘⢿⣿⣎⢻⣷⠰⣿⣿⣿⣿⣦⣀⣀⣴⣿⣿⣿⠟⢫⡾⢸⡟⠄. [0m
+[1;36m⠄⠄⠄⠄⠻⣦⡙⠿⣧⠙⢷⠙⠻⠿⢿⡿⠿⠿⠛⠋⠉⠄⠂⠘⠁⠞⠄⠄⠄ [0m
+[1;36m⠄⠄⠄⠄⠄⠈⠙⠑⣠⣤⣴⡖⠄⠿⣋⣉⣉⡁⠄⢾⣦⠄⠄⠄⠄⠄⠄⠄⠄ [0m
+[1;36m------------------------------------------------------------[0m
+[1;36m+----------------------------+[0m
+[1;33m|          Projects          |[0m
+[1;36m+----------------------------+[0m
+| [1;32m[1] Fortezza Tactics Online[0m
+|   Turn-based PvP strategy game.
+|   https://fortezzatactics.online/
+|
+| [1;32m[2] Kuraji -「クラジ」[0m
+|   Browser extension for Japanese subtitles.
+|   https://kuraji.colechiodo.cc
+|
+| [1;32m[3] Mojira -「モジラ」[0m
+|   OCR sentence mining for language learners.
+|   https://github.com/colechiodo/ocr-miner
+|
+| [1;32m[4] Homelab[0m
+|   Self-hosted infrastructure on Proxmox.
+|   https://github.com/colechiodo/homelab
+|
+| [1;32m[5] BassHero[0m
+|   ESP32 guitar pedal + companion app.
+|   https://github.com/ColeChiodo/esp32-instrument-practice-pedal
+|
+| [1;32m[6] dotfiles[0m
+|   Arch Linux Hyprland Gruvbox setup.
+|   https://github.com/colechiodo/dotfiles
+|
+| [1;32m[7] PrjctB[0m
+|   2D Bullet Hell RPG (Unity).
+|   https://orangesandcrema.itch.io/prjctb
+|
+| [1;32m[8] OpenGL Multiplayer FPS Prototype[0m
+|   Custom renderer, physics, and netcode.
+|   https://github.com/colechiodo/opengl_game
+[1;36m+----------------------------+[0m
+[1;36m------------------------------------------------------------[0m
+[1;33mCurrent Technologies:[0m [32mTypeScript | Node.js | React | Python | Docker
+C++ | C# | Unity | OpenGL | Vue | Tailwind CSS | FastAPI[0m
+[1;36m------------------------------------------------------------[0m
+[1;32mPortfolio loaded successfully [200][0m
+[1;36m============================================================[0m

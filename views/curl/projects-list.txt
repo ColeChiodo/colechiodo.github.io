@@ -1,0 +1,14 @@
+[36m============================================================[0m
+[36m                       Terminal Mode                        [0m
+[36m============================================================[0m
+[1;33mUsage:[0m
+  curl {{host}}/projects        List all projects
+  curl {{host}}/projects/1      View project details
+  curl {{host}}                 Home page
+
+[1;32mAvailable Projects:[0m
+
+{{projects}}
+[36m------------------------------------------------------------[0m
+[1;32mPortfolio loaded successfully [200][0m
+[36m============================================================[0m

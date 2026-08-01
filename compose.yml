@@ -1,0 +1,14 @@
+services:
+  portfolio:
+    image: colechiodo/portfolio:latest
+    build: .
+    ports:
+      - "9050:9050"
+    environment:
+      - DB_PATH=/app/db/db.sqlite
+    volumes:
+      - portfolio-data:/app/db
+    restart: unless-stopped
+
+volumes:
+  portfolio-data:

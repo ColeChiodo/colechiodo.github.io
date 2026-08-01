@@ -1,16 +1,13 @@
 #!/bin/bash
 set -e
 
-# Optionally set this in ~/.bashrc to override the compose file location:
-#   export DEPLOY_COMPOSE_FILE=~/path/to/docker-compose.yml
+source "$HOME/.bashrc_local"
 
-echo "Pulling latest image..."
-docker pull colechiodo/portfolio:latest
+COMPOSE_FILE="$PORTFOLIO_DEPLOY_COMPOSE_FILE"
 
-echo "Recreating container..."
-docker compose -f "${DEPLOY_COMPOSE_FILE:-~/scripts/docker-compose.yml}" up -d --force-recreate
+echo "Using compose file: $COMPOSE_FILE"
 
-echo "Cleaning up old images..."
+docker compose -f "$COMPOSE_FILE" pull
+docker compose -f "$COMPOSE_FILE" up -d --force-recreate
 docker image prune -f
 
-echo "Deploy complete!"

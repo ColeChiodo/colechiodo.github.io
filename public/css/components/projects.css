@@ -33,11 +33,13 @@
     flex-wrap: nowrap;
     gap: 16px;
     padding: 16px 0 8px 0;
-    transition: transform 0.3s;
+    position: relative;
 }
 
 .project {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 150px;
     height: 300px;
     border: 2px solid var(--accent-amber);
@@ -47,8 +49,12 @@
     background-color: var(--bg-dark);
     text-decoration: none;
     color: var(--accent-amber);
-    transition: width 0.3s, height 0.3s;
+    transition: width 0.3s, height 0.3s, transform 0.3s;
     z-index: 1;
+}
+
+.project--no-anim {
+    transition: none !important;
 }
 
 .project img {
@@ -173,4 +179,26 @@
     width: 24px;
     height: 24px;
     filter: brightness(0) invert(90%) sepia(70%) saturate(500%) hue-rotate(20deg);
+}
+
+.projects-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.projects-dot {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: 1px solid var(--accent-amber);
+    background: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.projects-dot--active,
+.projects-dot:hover {
+    background: var(--accent-amber);
 }

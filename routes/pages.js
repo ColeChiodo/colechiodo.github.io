@@ -64,9 +64,8 @@ export default function (app) {
       return res.type("text/plain").send(body);
     }
 
-    const tech = stripHtml(p.tech_icons)
-      .split("\n")
-      .map(l => l.trim())
+    const tech = [...p.tech_icons.matchAll(/alt="([^"]*)"/g)]
+      .map(m => m[1])
       .filter(Boolean)
       .join(", ");
 

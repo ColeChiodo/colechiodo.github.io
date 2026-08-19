@@ -56,7 +56,8 @@
         cursor: pointer;
     }
 
-    .project img {
+    .project img,
+    .project video {
         width: 100%;
         height: auto;
         filter: none;
@@ -100,7 +101,9 @@
     }
 
     .project--active img,
-    .project:hover img {
+    .project--active video,
+    .project:hover img,
+    .project:hover video {
         filter: none;
     }
 

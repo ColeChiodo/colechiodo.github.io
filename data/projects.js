@@ -3,7 +3,7 @@ export const PROJECTS = [
   {
     url: "https://fortezzatactics.online",
     target: ' target="_blank"',
-    image: "/images/Fortezzatest.gif", // Capture: Show two players in a match taking turns moving units and the opponent's game state updating in real time.
+    image: "/images/Fortezzatest.webm", // Capture: Show two players in a match taking turns moving units and the opponent's game state updating in real time.
     alt: "Fortezza Tactics Online Game",
     carousel: 0,
     mobile: 0,
@@ -19,7 +19,7 @@ export const PROJECTS = [
   {
     url: "https://kuraji.colechiodo.cc",
     target: ' target="_blank"',
-    image: "/images/kurajitest.gif", // Capture: Show a Japanese video, Kuraji detecting the subtitles, then select a subtitle to demonstrate the extension.
+    image: "/images/kurajitest.webm", // Capture: Show a Japanese video, Kuraji detecting the subtitles, then select a subtitle to demonstrate the extension.
     alt: "Kuraji Example Image",
     carousel: 1,
     mobile: 1,
@@ -34,7 +34,7 @@ export const PROJECTS = [
   {
     url: "https://github.com/colechiodo/ocr-miner",
     target: ' target="_blank"',
-    image: "/images/mojira.gif", // Capture: Upload a screenshot with Japanese text, show OCR completing, then hover/select detected text and perform a Yomitan lookup.
+    image: "/images/mojira.webm", // Capture: Upload a screenshot with Japanese text, show OCR completing, then hover/select detected text and perform a Yomitan lookup.
     alt: "Mojira OCR Sentence Mining",
     carousel: 2,
     mobile: 2,
@@ -49,7 +49,7 @@ export const PROJECTS = [
   {
     url: "https://github.com/ColeChiodo/esp32-instrument-practice-pedal",
     target: "",
-    image: "/images/esppedaldemo.gif", // Capture: Show BassHero loading a guitar tab from the SD card, displaying it on the OLED, and playing it back.
+    image: "/images/esppedaldemo.webm", // Capture: Show BassHero loading a guitar tab from the SD card, displaying it on the OLED, and playing it back.
     alt: "Bass Hero Demo",
     carousel: 3,
     mobile: 5,
@@ -68,7 +68,7 @@ export const PROJECTS = [
   {
     url: "https://orangesandcrema.itch.io/prjctb",
     target: ' target="_blank"',
-    image: "/images/PrjctBtest.gif", // Capture: Show active gameplay with the player dodging bullet patterns, attacking enemies, and moving through a visually interesting section.
+    image: "/images/PrjctBtest.webm", // Capture: Show active gameplay with the player dodging bullet patterns, attacking enemies, and moving through a visually interesting section.
     alt: "PrjctB",
     carousel: 4,
     mobile: 6,
@@ -83,7 +83,7 @@ export const PROJECTS = [
   {
     url: "https://github.com/colechiodo/opengl_game",
     target: ' target="_blank"',
-    image: "/images/multiplayertest.gif", // Capture: Show two players connected to the same FPS match, moving and shooting to demonstrate rendering and networking.
+    image: "/images/multiplayertest.webm", // Capture: Show two players connected to the same FPS match, moving and shooting to demonstrate rendering and networking.
     alt: "OpenGL FPS Prototype",
     carousel: 5,
     mobile: 7,
@@ -98,7 +98,7 @@ export const PROJECTS = [
   {
     url: "https://github.com/colechiodo/dotfiles",
     target: ' target="_blank"',
-    image: "/images/dotfiles.gif", // Capture: Show the Hyprland desktop and briefly open Kitty, Neovim, Tmux, Waybar, the launcher, and notifications.
+    image: "/images/dotfiles.webm", // Capture: Show the Hyprland desktop and briefly open Kitty, Neovim, Tmux, Waybar, the launcher, and notifications.
     alt: "Arch Linux Hyprland Desktop",
     carousel: 6,
     mobile: 4,
@@ -114,7 +114,7 @@ export const PROJECTS = [
   {
     url: "https://github.com/colechiodo/homelab",
     target: ' target="_blank"',
-    image: "/images/homelab.gif", // Capture: Show Proxmox, then briefly show the monitoring stack and several self-hosted services running through Docker.
+    image: "/images/homelab.webm", // Capture: Show Proxmox, then briefly show the monitoring stack and several self-hosted services running through Docker.
     alt: "Homelab Infrastructure",
     carousel: 7,
     mobile: 3,
@@ -130,7 +130,7 @@ export const PROJECTS = [
   /*{
     url: "#",
     target: "",
-    image: "/images/fightinggame.gif", // Capture: Show two characters fighting, demonstrating movement and combat; later update this GIF to showcase rollback networking.
+    image: "/images/fightinggame.webm", // Capture: Show two characters fighting, demonstrating movement and combat; later update this GIF to showcase rollback networking.
     alt: "Odin 2D Fighting Game",
     carousel: 8,
     mobile: 8,

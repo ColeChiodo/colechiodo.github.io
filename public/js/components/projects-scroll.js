@@ -9,6 +9,7 @@ if (viewport && projects && dots) {
   let running = false;
   let resizeHandler = null;
   let observer = null;
+  let lazyObserver = null;
   const desktopQuery = window.matchMedia("(min-width: 769px)");
 
   function getGap() {
@@ -31,6 +32,39 @@ if (viewport && projects && dots) {
   function sortByCarousel() {
     cards.sort((a, b) => (carouselValue(a) || 0) - (carouselValue(b) || 0));
     cards.forEach(c => projects.appendChild(c));
+  }
+
+  function loadVideo(video, play) {
+    if (!video) return;
+    const src = video.dataset.src;
+    if (!video.hasAttribute("src") || video.getAttribute("src") !== src) {
+      video.setAttribute("src", src);
+      video.load();
+    }
+    video.preload = "auto";
+    if (play) video.play().catch(() => {});
+  }
+
+  function unloadVideo(video) {
+    if (!video) return;
+    video.pause();
+    video.removeAttribute("src");
+    video.load();
+    video.preload = "none";
+  }
+
+  function syncVideos() {
+    const total = cards.length;
+    cards.forEach((c, i) => {
+      const video = c.querySelector("video");
+      if (!video) return;
+      const rel = wrapRel(i - index);
+      if (rel >= -1 && rel <= 1) {
+        loadVideo(video, true);
+      } else {
+        unloadVideo(video);
+      }
+    });
   }
 
   function measure() {
@@ -85,6 +119,8 @@ if (viewport && projects && dots) {
     dots.querySelectorAll(".projects-dot").forEach((d, i) => {
       d.classList.toggle("projects-dot--active", i === index);
     });
+
+    syncVideos();
   }
 
   function buildDots() {
@@ -100,6 +136,30 @@ if (viewport && projects && dots) {
       });
       dots.appendChild(dot);
     });
+  }
+
+  function refreshLazyObserver() {
+    if (!lazyObserver) return;
+    lazyObserver.disconnect();
+    cards.forEach(c => lazyObserver.observe(c));
+  }
+
+  function initLazyObserver() {
+    if (lazyObserver) lazyObserver.disconnect();
+    lazyObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        const video = e.target.querySelector("video");
+        if (e.isIntersecting) loadVideo(video, true);
+        else unloadVideo(video);
+      });
+    }, { rootMargin: "800px 0px" });
+    cards.forEach(c => lazyObserver.observe(c));
+  }
+
+  function destroyLazyObserver() {
+    if (!lazyObserver) return;
+    lazyObserver.disconnect();
+    lazyObserver = null;
   }
 
   projects.addEventListener("click", (e) => {
@@ -127,6 +187,7 @@ if (viewport && projects && dots) {
       if (index >= cards.length) index = 0;
       buildDots();
       update(false);
+      refreshLazyObserver();
     });
     observer.observe(projects, { childList: true });
   }
@@ -143,18 +204,22 @@ if (viewport && projects && dots) {
       c.classList.remove("project--active", "project--before", "project--after");
       c.style.top = "";
       c.style.transform = "";
+      unloadVideo(c.querySelector("video"));
     });
   }
 
   const onChange = (e) => {
     if (e.matches) {
+      destroyLazyObserver();
       if (!running) start();
-    } else if (running) {
-      stop();
+    } else {
+      if (running) stop();
+      initLazyObserver();
     }
   };
   if (desktopQuery.addEventListener) desktopQuery.addEventListener("change", onChange);
   else if (desktopQuery.addListener) desktopQuery.addListener(onChange);
 
   if (desktopQuery.matches) start();
+  else initLazyObserver();
 }
